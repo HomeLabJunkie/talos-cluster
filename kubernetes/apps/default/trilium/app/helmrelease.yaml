@@ -47,8 +47,8 @@ spec:
             env:
               TZ: ${TIMEZONE}
               TRILIUM_DATA_DIR: &datadir /trilium-data
-              USER_UID: 1001
-              USER_GID: 1001
+              USER_UID: 1000
+              USER_GID: 1000
             resources:
               requests:
                 cpu: 100m
