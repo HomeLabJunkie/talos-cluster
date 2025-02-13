@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=https://kubernetesjsonschema.dev/v1.18.1-standalone-strict/secret-v1.json
+apiVersion: v1
+kind: Secret
+metadata:
+  name: github-deploy-key
+stringData:
+  identity: ENC[AES256_GCM,data:ITBmKLJOqMOX1BahSI/faIQ6RQkSksC59xVvL/q6V5rZ30fgv+zuZGWw6T2rw5xtRg8AGrUBrejj51Nptz9I7naYoR2iQ93ch82io8JHGz1Fg+OQ6iJjIcnh6f0SgSC1xY8oDsnBD2BlvXL4SHDU9LDGo0U1UVRa+goFve06Sr2aL4YNLJ4rShCoOYKQj/f0mBdC/iIIZW/xjX+xvJN3YqB5mDELi7/Wc4RA1QOHEu1hfOoyHhAS1pKQj9UDrvdIXHPz9XlYI8Ie+QEPnFN9OTqFRPe22dCWWNi6/Kz3lImzpaQnCR/DQiPLWYSLgMKyWp/02pZ72Xyr2FqwkKk6MZVrPXBUWXVPo9gu2RuLL1Bkf1MzvIbFafbUKuZ54Z1daftT4QD9XbiehnM20q+ZFlP+2RgEuyLIjVzFbZqY3bjtGUTiwfzdbb5ixYbWcPPX7NFCmBXvHQvoATw/fSooZwO1njIPlNfItpvTHNF1TnFVBKVzJzCxv1xp3Mes5B+3pmmDX4yL5NUE0XrPsa5RorfWxhafsZRgLCKzPKtUHFAaUGT7YxtuE5PqMTwIfCnTdSdyOHwpmdAKJYG6grG6iN3POIPbtiAgtllL+i/otR8T92qeAxdrZ8XdJBj2YiLpznzgD/wPQKcmU118CVN5ujmjqA7h2VwrwdceQI9RHBXfhcU+2N+ld/2AItUFgngvl7SKvodB3C/DXWNuxS8Dj6KvhPflqInsvjK2wOTECYrpdrbQ3RmV+2Yvl+sphpjzEH5y9Tez1aFMOJorYo3vxV5bAtQV6vfT2NbCwMjV3JM7hWXIV++yhoTxOffP0z8nS47Rycw6E5BijD3zJtUWJoZx5Pm2/S9A1+2mSK/n1/SK3rFbiidct8VlWLYkQTgwEbBEpflKrSfIg9HtbemPzToV6dq5Ug57Mml9oRd6JRE3ktmgGLTeU+X9k/skFH7An/PSQQ==,iv:Ckkct8cwbGz+pC4HAIShtcKbl7TazbsI560/V5Uu0Rg=,tag:nGoYwzkk1XdpHo0AkqccEA==,type:str]
+  known_hosts: ENC[AES256_GCM,data:ddp6lLMZIjk+BznwnlBtGNctA08s2DCNCY3xxXAJE93sm/ApLQFOP+C1kO+d7MYXnK7lqgt91aGrJ9dEcA0awIetUcbPU7ZcqW9yEMVfo2yoDM6MIwJP2zYgvC9IC3gQl+xULCWEdQ9sJ0aTkU6aFo3HBPzgtzB5lPZFchnL8Imu/5zbBY0MYqqSfIJ0oMJWoKINJwBmhiyEKQRdc5py9rE87b0n69yYSYs/uJEtk9F+yOicKWrhxs6WYGO5s2apW2jomJzJFGWuK7GMxt1qnYz4eKRfnCA3OFAG4dHOEcp+l0V8my3AmSFZ3qx5KUg2pmg54BJ2SPY87SjZp0T7pzJkVyYK4plRrLe4z02oUPTRVFnPMNQKFYKlbUiD27kk0JRhWBu2djanXlbqPOQ/PNCodkKWRKp90ZDIKICbU5MVn3JBd68zU8Vdq/wHFFV3p/DtcxedcuZuWsgh3f5evDJhD55NPmJa+W1p7KHEWEF4siUX9h7NkLAX3uBvobJ0wXwbTkeHBm3mDpLB+XExWZonarGWItIg8jyDqIPbkMajlzHWjAvHenuzgWN3QMFhdD65FiV/KmeTunrE5DvJIbbIJv+xsfb8LGlfySVOiOFK/eEiW40IFzquT+wK7l7zK6iK5rIaTNHvbziNb/FNI3dK9eSCxG9+k5/zCudth9Wb+brnw1u8YWRwXk80OMdLWVIJva1cQbE+J1WWvpx/vJ9kyacnVShBi92M6jdQtJGLZ3y42qgSQxvbRqXhvC1GNxpxH7/6g4opzvMqTRVyREC0W0j6qbiqwc9N1Q6Cnke3YYy6+hvCRMU+3g8XdGxK/OPqM24FpKcCHKO0mkjurzd29cILC4sg5a0KtiBJKw53Z2iG/T5r12vuXZ5zIOWv4ICxf0PRepG3x91w566EjCyg/SfbYxUoQJL7UOCaBEE0mq54s9vjCgDadDp1HMXFkEFRcHHOwuOtXtF/OxwRZl5DGx3xkUtytgkAZS6/J29yEcbXMlVQDs4yzii+jmWjlDoFmUqjoxnUvqVUdGgs3Hv9xs79mzrbxWmb0HsLHc55D2cdylVp9HT5uc03J5QBYxMesdpT5J5y1s4l,iv:Dg+kpXWVmbdV5EivDqpyrfNVqSyg921hN1Jk8/0ySZU=,tag:EyJW7IPOMcBI5IFvL3b/1A==,type:str]
+sops:
+  kms: []
+  gcp_kms: []
+  azure_kv: []
+  hc_vault: []
+  age:
+    - recipient: age1l5pn0rt2p69q09asv9nf2vew4tamcxhqstxrg6wv9z79nglr8p0qtcnxrq
+      enc: |
+        -----BEGIN AGE ENCRYPTED FILE-----
+        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSArUy9MMXpwMzFyUjh3S1oz
+        U29seldoRkRnQmF5akZSUCtGS2Y0UHN6QlZBCjA0TFBzai8zSXQ0NWpHNDdpTzFI
+        ODZMeHV5ZVV3RGNmSGRKTDI3bngwb0UKLS0tIG5DeU81ZGxiZXdDekJpb0ZPd2VX
+        dmV2OWcvM1J1Zm5TSXBVbG81OWphdncKQMB3Tl3lhH3e6MJP536ka8qyQk9XUD9F
+        heGfamwzIkk+pMGXMOtwIfwxWjD0hj7hfOXWLEWGURG/R45hs1tH3Q==
+        -----END AGE ENCRYPTED FILE-----
+  lastmodified: "2025-02-13T03:09:00Z"
+  mac: ENC[AES256_GCM,data:ao28C5v+d4cKWQkuK9Oi0Z8smEZGkG06l3rYw3W6vCzQ+yvANak3UOM4MnZykSXuuPJXDZAfLmY+jveOXmmDRxh0h4lFKwBkXJNGWgHfpLLq8Wtu9lFAW+cNIGtG6PD1JmRruw32cKBqonA+cOnioD+aQzzUwN0UmaNIQUtF8h8=,iv:7v41Z4azLunU54X1KFd9vf7+rRgG+bQ8ZSpgGX39x2I=,tag:1yTCzYFWW+8JjFMA9Horuw==,type:str]
+  pgp: []
+  encrypted_regex: ^(data|stringData)$
+  mac_only_encrypted: true
+  version: 3.9.4
