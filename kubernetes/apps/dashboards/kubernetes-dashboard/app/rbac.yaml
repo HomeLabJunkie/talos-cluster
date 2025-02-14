@@ -15,6 +15,7 @@ secrets:
 ---
 # For dashboard sign in token:
 # kubectl -n dashboards describe secret kubernetes-dashboard | grep '^token'
+
 apiVersion: v1
 kind: Secret
 type: kubernetes.io/service-account-token
