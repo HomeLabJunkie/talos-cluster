@@ -9,5 +9,5 @@ resources:
   - ./echo-server/ks.yaml
   - ./vaultwarden/ks.yaml
   - ./trilium/ks.yaml
-  - ./gitops/ks.yaml
+
 
