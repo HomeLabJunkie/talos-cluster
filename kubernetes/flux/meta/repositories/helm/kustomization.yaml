@@ -15,3 +15,4 @@ resources:
   - ./spegel.yaml
   - ./stakater.yaml
   - ./rook-ceph.yaml
+  - ./kubernetes-dashboard.yaml

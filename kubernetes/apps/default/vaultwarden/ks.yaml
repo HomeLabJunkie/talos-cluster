@@ -9,15 +9,8 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-#  components:
-#    - ../../../../components/gatus/guarded
-#    - ../../../../components/volsync
   interval: 30m
   path: ./kubernetes/apps/default/vaultwarden/app
-#  postBuild:
-#    substitute:
-#      APP: *app
-#      VOLSYNC_CAPACITY: 1Gi
   prune: true
   sourceRef:
     kind: GitRepository
