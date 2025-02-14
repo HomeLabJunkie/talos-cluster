@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: kubernetes-dashboard
+  name: admin-user
   namespace: dashboards
   labels:
     app.kubernetes.io/managed-by: Helm
@@ -14,31 +14,27 @@ secrets:
 
 ---
 # For dashboard sign in token:
-# kubectl -n dashboards describe secret kubernetes-dashboard | grep '^token'
+# kubectl -n dashboards describe secret admin-user | grep '^token'
 
 apiVersion: v1
 kind: Secret
-type: kubernetes.io/service-account-token
 metadata:
-  name: kubernetes-dashboard
+  name: admin-user
   namespace: dashboards
-  labels:
-    app.kubernetes.io/managed-by: Helm
   annotations:
-    meta.helm.sh/release-name: kubernetes-dashboard
-    meta.helm.sh/release-namespace: dashboards
-    kubernetes.io/service-account.name: kubernetes-dashboard
+    kubernetes.io/service-account.name: "admin-user"
+type: kubernetes.io/service-account-token
 
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: system:kubernetes-dashboard
+  name: admin-user
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
   name: cluster-admin
 subjects:
-  - kind: ServiceAccount
-    name: kubernetes-dashboard
-    namespace: dashboards
+- kind: ServiceAccount
+  name: admin-user
+  namespace: dashboards
