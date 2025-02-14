@@ -7,7 +7,6 @@ resources:
   - ./namespace.yaml
   # Flux-Kustomizations
   - ./rook-ceph/ks.yaml
-  - ./ceph-toolbox/ks.yaml
 transformers:
   - |-
     apiVersion: builtin
