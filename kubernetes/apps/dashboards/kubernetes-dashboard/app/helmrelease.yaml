@@ -32,19 +32,25 @@ spec:
         - --enable-insecure-login
         - --token-ttl=86400 # seconds time to expire
 
+    service:
+      app:
+        controller: *app
+        ports:
+          http:
+            port: &port 443
     ingress:
       app:
         enabled: true
         className: external
         annotations:
-          external-dns.alpha.kubernetes.io/target: external.${SECRET_DOMAIN}
+          external-dns.alpha.kubernetes.io/target: "external.${SECRET_DOMAIN}"
         hosts:
           - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
             paths:
               - path: /
                 service:
-                  identifier: kubernetes-dashboard
-                  port: 443
+                  identifier: app
+                  port: *port
         tls:
           - hosts:
               - *host
