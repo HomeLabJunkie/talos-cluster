@@ -46,7 +46,7 @@ spec:
         controller: *app
         ports:
           http:
-            port: &port 443
+            port: &port 8443
     ingress:
       app:
         enabled: true
