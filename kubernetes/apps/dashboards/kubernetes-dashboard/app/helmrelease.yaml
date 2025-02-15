@@ -1,11 +1,11 @@
 ---
-# yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s/helm-charts/main/charts/other/app-template/schemas/helmrelease-helm-v2.schema.json
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: &app kubernetes-dashboard
 spec:
   interval: 30m
+
   chart:
     spec:
       chart: kubernetes-dashboard
@@ -17,50 +17,62 @@ spec:
   releaseName: kubernetes-dashboard
   targetNamespace: dashboards
   maxHistory: 2
+
   install:
     remediation:
       retries: 3
+
   upgrade:
     cleanupOnFail: true
     remediation:
       strategy: rollback
       retries: 3
+
+  uninstall:
+    keepHistory: false
+
   values:
-    metricsScraper:
-      enabled: true
-    app:
-      env:
-        TZ: "${TIMEZONE}"
-      extraArgs:
-        - --enable-skip-login
-        - --disable-settings-authorizer
-        - --enable-insecure-login
-        - --token-ttl=86400 # seconds time to expire
-      resources:
-        requests:
-          cpu: 100m
-          memory: 100Mi
-        limits:
-          memory: 2Gi
-    service:
-      app:
-        controller: *app
-        ports:
-          http:
-            port: &port 8443
-    ingress:
-      app:
-        enabled: true
-        className: external
+    controllers:
+      kubernetes-dashboard:
         annotations:
-          external-dns.alpha.kubernetes.io/target: "external.${SECRET_DOMAIN}"
-        hosts:
-          - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
-            paths:
-              - path: /
-                service:
-                  identifier: app
-                  port: *port
-        tls:
-          - hosts:
-              - *host
+          reloader.stakater.com/auto: "true"
+
+        containers:
+          *app :
+            env:
+              TZ: "${TIMEZONE}"
+            extraArgs:
+              - --enable-skip-login
+              - --disable-settings-authorizer
+              - --enable-insecure-login
+              - --token-ttl=86400 # seconds time to expire
+            resources:
+              requests:
+                cpu: 100m
+                memory: 100Mi
+              limits:
+                memory: 2Gi
+
+      service:
+        *app :
+          controller: *app
+          ports:
+            http:
+              port: &port 8443
+
+      ingress:
+        app:
+          enabled: true
+          className: external
+          annotations:
+            external-dns.alpha.kubernetes.io/target: "external.${SECRET_DOMAIN}"
+          hosts:
+            - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
+              paths:
+                - path: /
+                  service:
+                    identifier: app
+                    port: *port
+          tls:
+            - hosts:
+                - *host
