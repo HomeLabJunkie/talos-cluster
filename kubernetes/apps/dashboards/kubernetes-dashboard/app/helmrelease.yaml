@@ -32,13 +32,6 @@ spec:
         - --enable-insecure-login
         - --token-ttl=86400 # seconds time to expire
 
-    service:
-      *app :
-        controller: *app
-        ports:
-          http:
-            port: &port 8080
-
     ingress:
       app:
         enabled: true
@@ -50,8 +43,8 @@ spec:
             paths:
               - path: /
                 service:
-                  identifier: *app
-                  port: *port
+                  identifier: kubernetes-dashboard
+                  port: 8443
         tls:
           - hosts:
               - *host
